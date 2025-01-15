@@ -167,3 +167,36 @@ footer button:hover {
         color: #00ffbf;
     }
 }
+
+@media (max-width: 600px) {
+    header {
+        display: block;
+    }
+
+    header h3 {
+        justify-content: center;
+        padding: 20px;
+    }
+
+    header ul {
+        justify-content: center;
+        gap: 5px;
+    }
+
+    header ul li {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .about div p {
+        width: 100%;
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 1150px) {
+    .about div p {
+        width: 100%;
+        margin: 20px auto;
+    }
+}
