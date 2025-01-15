@@ -6,31 +6,14 @@ async function getGitHubRepos() {
 }
 
 getGitHubRepos().then(repository => {
-    const projectSection = document.getElementById('project');
-    for (const repo of repository) {
-        projectSection.style.display = 'flex';
-        projectSection.style.flexWrap = 'wrap';
-        projectSection.style.justifyContent = 'space-around';
-        projectSection.style.alignItems = 'center';
-
+    const projectSection = document.getElementById('projects');
+    const limitedRepos = repository.slice(0, 6); // Limita a 6 repositórios
+    for (const repo of limitedRepos) {
         const projectDiv = document.createElement('div');
         projectDiv.classList.add('project');
 
-        projectDiv.style.width = '25%';
-        projectDiv.style.height = '160px';
-
-        projectDiv.style.padding = '10px';
-
-        projectDiv.style.border =  '2px, solid, #836FFF';
-        projectDiv.style.borderRadius = '15px';
-        
-        projectDiv.style.display = 'flex';
-        projectDiv.style.flexDirection = 'column';
-        projectDiv.style.justifyContent = 'space-around';
-        projectDiv.style.alignItems = 'center';
-
         const projectName = document.createElement('h3');
-        projectName.textContent = repo.name;
+        projectName.textContent = repo.full_name;
 
         const projectUrl = document.createElement('a');
         projectUrl.href = repo.html_url;
